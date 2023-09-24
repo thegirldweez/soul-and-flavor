@@ -17,6 +17,15 @@ html {
   line-height: 1.4;
 }
 
+figure,
+img {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -86,6 +95,121 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+/* Global styles */
+body {
+  background: #fefbf9;
+  font-size: 0.9em;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+header,
+aside,
+main,
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+
+  width: 85%;
+}
+
+/* Header */
+
+header figure img {
+  width: 325px;
+  padding: 10px 0 0;
+}
+
+/* ==============================
+          Homepage 
+ =============================== */
+
+/* Main */
+.img-thumbnail img {
+  width: 200px;
+  height: 200px;
+
+  object-fit: cover;
+}
+
+
+
+/* ==============================
+          Recipe Pages 
+ =============================== */
+#chili .image {
+  background: url('../img/beef-chili-1.jpg') center no-repeat;
+  background-size: cover;
+
+  height: 450px;
+}
+
+
+/* Main */
+main {
+  padding-top: 50px;
+}
+
+.recipe h2 {
+  font-family: "Just Another Hand", cursive;
+  font-size: 3.5rem;
+  text-align: center;
+
+  margin: 15px 0 10px;
+}
+
+.recipe .time {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 15px 0;
+
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.prep,
+.cook,
+.total {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.time .time-details {
+  font-size: 0.725em;
+  text-transform: uppercase;
+  margin: 5px 0 0 8px;
+}
+
+.time i {
+  font-size: 0.9rem;
+}
+
+.time p {
+  display: inline;
+}
+
+
+.recipe .description {
+  font-style: italic;
+  text-align: justify;
+}
+
+.columns {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.credit p {
+  font-size: 0.725rem;
+  text-align: right;
+  text-transform: uppercase;
+}
 
 /* ==========================================================================
    Helper classes
@@ -175,8 +299,117 @@ textarea {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+@media only screen and (min-width: 768px) {
+  /* ========== Tablet styles ========== */
+
+  body {
+    font-size: 1em;
+  }
+
+  
+
+  /* ==============================
+          Recipe Pages 
+ =============================== */
+
+  /* Main */
+
+  .recipe .time {
+    justify-content: space-evenly;
+    flex-flow: row nowrap;
+  }
+
+  .prep,
+  .cook,
+  .total {
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+
+  .time i,
+  .time .time-details {
+    font-size: 0.875em;
+    margin-top: 0;
+  }
+
+  .credit p {
+    font-size: 0.825rem;
+  }
+
+
+}
+
+
+
+@media only screen and (min-width: 1200px) {
+  /* ========== Desktop styles ========== */
+
+  body {
+    font-size: 0.8em;
+  }
+
+  .content-wrapper {
+    width: 90%;
+  }
+
+
+  /* ==============================
+          Recipe Pages 
+ =============================== */
+
+
+
+
+  /* Main */
+  
+  main {
+    padding: 50px 0;
+  }
+  .card {
+    background: none;
+    
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #chili .image {
+    height: auto;
+    width: 50%;
+  }
+
+  .card .recipe {
+    width: 50%;
+    padding: 0 15px;
+  }
+
+  .card .image img {
+    width: 650px;
+    height: 700px;
+    object-fit: cover;
+  }
+
+
+  .recipe .description {
+    font-style: italic;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .columns {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  .columns .ingredients {
+    width: 45%;
+  }
+  .columns .directions {
+    width: 55%;
+  }
+
+  .credit p {
+    font-size: 0.8em;
+  }
 }
 
 @media print,
@@ -260,4 +493,3 @@ textarea {
     page-break-after: avoid;
   }
 }
-
