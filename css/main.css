@@ -118,12 +118,83 @@ footer {
   width: 85%;
 }
 
+
+/* Links */
+a,
+a:visited {
+  color: #0AB6B0;
+  text-decoration: none;
+}
+a:hover {
+  font-weight: 700;
+}
+
+
+
 /* Header */
 
 header figure img {
   width: 325px;
   padding: 10px 0 0;
 }
+
+/* Aside */
+
+aside {
+  padding-top: 50px;
+}
+nav {
+  width: 80%;
+}
+
+nav .navigation {
+  display: flex;
+  justify-content: space-evenly;
+}
+nav ul {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+}
+nav ul li {
+  font-size: .875em;
+  line-height: 1.5em;
+  text-transform: uppercase;
+
+  display: block;
+  transition-duration: 0.5s;
+  position: relative;
+  padding: 0 15px;
+}
+
+nav .navigation li a {
+  color: #F16059;
+}
+
+
+nav ul li ul {  /* dropdown nav menu */
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+  display: none;
+}
+nav ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+nav ul li ul li {
+  clear: both;
+  width: 100%;
+  font-size: inherit;
+}
+
+
 
 /* ==============================
           Homepage 
@@ -145,10 +216,14 @@ header figure img {
 #chili .image {
   background: url('../img/beef-chili-1.jpg') center no-repeat;
   background-size: cover;
-
   height: 450px;
 }
 
+#chicken-ravioli .image {
+  background: url('../img/chicken-ravioli-bake.jpg') center no-repeat;
+  background-size: cover;
+  height: 450px;
+}
 
 /* Main */
 main {
@@ -306,7 +381,10 @@ main {
     font-size: 1em;
   }
 
-  
+  /* Aside */
+  nav ul li {
+    font-size: .95em;
+  }
 
   /* ==============================
           Recipe Pages 
@@ -345,18 +423,22 @@ main {
   /* ========== Desktop styles ========== */
 
   body {
-    font-size: 0.8em;
+    font-size: 0.75em;
   }
 
-  .content-wrapper {
-    width: 90%;
-  }
-
+.content-wrapper {
+  width: 75%;
+}
 
   /* ==============================
           Recipe Pages 
  =============================== */
 
+  #chili .image,
+  #chicken-ravioli .image {
+    height: 650px;
+    width: 45%;
+  }
 
 
 
@@ -365,27 +447,17 @@ main {
   main {
     padding: 50px 0;
   }
-  .card {
-    background: none;
-    
+
+  .card {   
     display: flex;
     justify-content: space-between;
+  
   }
 
-  #chili .image {
-    height: auto;
-    width: 50%;
-  }
 
   .card .recipe {
-    width: 50%;
+    width: 55%;
     padding: 0 15px;
-  }
-
-  .card .image img {
-    width: 650px;
-    height: 700px;
-    object-fit: cover;
   }
 
 
@@ -409,7 +481,10 @@ main {
 
   .credit p {
     font-size: 0.8em;
+    text-align: left;
   }
+
+
 }
 
 @media print,
